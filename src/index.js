@@ -40,15 +40,14 @@ app.get("/blogposts", async (req, res) => {
   const doc = await client.query(
     Map(
       Paginate(Match(Index("blogposts"))),
-      Lambda(["ref", "title", "description", "created_at", "read_time"], {
-        ref: Var("ref"),
+      Lambda(["title", "description", "created_at", "read_time", "slug"], {
         title: Var("title"),
         description: Var("description"),
         created_at: Var("created_at"),
-        read_time: Var("read_time")
+        read_time: Var("read_time"),
+        slug: Var("slug")
       }
-    )
-   )
+    ))
   );
   
   res.send(doc);
