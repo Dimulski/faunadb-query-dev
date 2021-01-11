@@ -1,0 +1,17 @@
+{
+  "name": "faunadb-query-dev",
+  "version": "1.0.0",
+  "description": "A small Node.js project to test out FaunaDB queries",
+  "main": "index.js",
+  "scripts": {
+    "start": "node -r dotenv/config src"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "faunadb": "^4.0.0"
+  }
+}
