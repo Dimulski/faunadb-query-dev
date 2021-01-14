@@ -63,7 +63,7 @@ app.get("/getByRef", async (req, res) => {
 
 app.get("/getBySlug", async (req, res) => {
   const doc = await client.query(
-    Get(Match(Index('blogpost_by_slug'), 'integrate-ckeditor5-into-cms'))
+    Get(Match(Index('blogpost_by_slug'), req.query.slug))
   );
   
   res.send(doc);
